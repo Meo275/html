@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Soldier Registration</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+        color: #e0f0ff;
+        padding: 2rem;
+      }
+
+      .form-container {
+        max-width: 900px;
+        margin: auto;
+        background: linear-gradient(to right, #111111, #222222);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 255, 170, 0.15);
+        border: 1px solid #00ffc3;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #00ffc3;
+        text-shadow: 0 0 5px #00ffc3aa;
+      }
+
+      fieldset {
+        border: 1px solid #00ffc36b;
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      legend {
+        padding: 0 12px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #00ffc3;
+      }
+
+      .form-group {
+        margin-bottom: 1.2rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 0.4rem;
+        color: #aaddeb;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 0.7rem;
+        border: 1px solid #00ffc385;
+        border-radius: 6px;
+        background-color: #1a2a30;
+        color: #fff;
+        font-size: 1rem;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        transform: scale(1.2);
+        margin-right: 0.4rem;
+      }
+
+      .checkbox-group,
+      .radio-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      .form-actions {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      button {
+        background: linear-gradient(90deg, #00ffc3, #00a2ff);
+        border: none;
+        padding: 0.9rem 2.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #001b1d;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px #00ffc37c;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #00ffc3a0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Advanced Soldier Registration</h1>
+      <form>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              value="Captain Alex Mason"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" value="1985-07-01" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="alex.mason@military.gov"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Contact Number</label>
+            <input type="tel" id="phone" name="phone" value="+1-800-123-4567" />
+          </div>
+          <div class="form-group">
+            <label for="rank">Rank</label>
+            <select id="rank" name="rank">
+              <option>Private</option>
+              <option>Sergeant</option>
+              <option>Lieutenant</option>
+              <option selected>Captain</option>
+              <option>Major</option>
+            </select>
+          </div>
+          <fieldset></fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend>Deployment & Equipment</legend>
+          <div class="form-group">
+            <label for="deployment-date">Deployment Date</label>
+            <input
+              type="date"
+              id="deployment-date"
+              name="deployment-date"
+              value="2025-08-01"
+            />
+          </div>
+          <div class="form-group">
+            <label for="weapon">Primary Weapon</label>
+            <select id="weapon" name="weapon">
+              <option selected>M4</option>
+              <option>AK-47</option>
+              <option>G36</option>
+              <option>FN SCAR</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Issued Equipment</label>
+            <div class="checkbox-group">
+              <label
+                ><input type="checkbox" name="equip" checked />Helmet</label
+              >
+              <label><input type="checkbox" name="equip" checked />Armor</label>
+              <label><input type="checkbox" name="equip" />Radio</label>
+              <label
+                ><input type="checkbox" name="equip" checked />Night
+                Vision</label
+              >
+              <label><input type="checkbox" name="equip" />Medical Kit</label>
+            </div>
+            <fieldset></fieldset>
+          </div>
+          <div class="form-group">
+            <label>Deployment Status</label>
+            <div class="radio-group">
+              <label><input type="radio" name="status" checked />Active</label>
+              <label><input type="radio" name="status" />Deployed</label>
+              <label><input type="radio" name="status" />Reserve</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <legend>
+          <fieldset>
+            <legend>Service Details</legend>
+            <div class="form-group">
+              <label for="service-years">Years of Service</label>
+              <input
+                type="number"
+                id="service-years"
+                name="service-years"
+                min="0"
+                max="50"
+                value="12"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="specialization">Specialization</label>
+              <select id="specialization" name="specialization">
+                <option selected>Reconnaissance</option>
+                <option>Demolitions</option>
+                <option>Sniper</option>
+                <option>Communications</option>
+                <option>Medical</option>
+                <option>Cyber Warfare</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="missions">Missions Completed</label>
+              <input type="number" id="missions" name="missions" value="27" />
+            </div>
+
+            <div class="form-group">
+              <label for="commendations">Commendations / Awards</label>
+              <textarea id="commendations" name="commendations" rows="3">
+Silver Star, Distinguished Service Cross, NATO Service Medal
+    </textarea
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="last-deployment">Last Deployment Location</label>
+              <input
+                type="text"
+                id="last-deployment"
+                name="last-deployment"
+                value="Kandahar Province, Afghanistan"
+              />
+            </div>
+          </fieldset>
+        </legend>
+
+        <fieldset>
+          <legend>Extras</legend>
+          <div class="form-group">
+            <label for="uniform-color">Uniform Color Code</label>
+            <input
+              type="color"
+              id="uniform-color"
+              name="uniform-color"
+              value="#223344"
+            />
+          </div>
+          <div class="form-group">
+            <label for="docs">Upload Documents</label>
+            <input type="file" id="docs" name="docs" multiple />
+          </div>
+          <div class="form-group">
+            <label for="readiness">Readiness Level</label>
+            <input
+              type="range"
+              id="readiness"
+              name="readiness"
+              min="0"
+              max="100"
+              value="85"
+            />
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="3">
+Ready for recon mission. Intel reviewed.</textarea
+            >
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit">Submit Registration</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
